@@ -26,7 +26,7 @@ pipeline {
     }
     stage('deplpy to staging') {
       steps {
-        input(message: ‘Deploy to staging ?', ok: 'YES', submitter: 'admin', submitterParameter: 'deploy')
+        input(message: 'Deploy to staging ?', ok: 'YES', submitter: 'admin', submitterParameter: 'deploy')
         sh 'ansible staging -m copy -a \'src=target/hello.war dest=/root/tomcat8/webapps\''
       }
     }
